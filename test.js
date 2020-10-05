@@ -17,3 +17,6 @@ function whatScore () {
     return prompt('Какую оценку ты дашь фильму?', '');
     }
     personalMovieDB.movies[whatMovie()] =  whatScore();
+    console.log(personalMovieDB);
+
+    

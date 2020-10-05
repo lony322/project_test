@@ -1,8 +1,4 @@
-let numberOfFilms = 0; //Сколько всего фильмов
-let lastFilm = ''; //Последний просмотренный фильм
-let filmScore = 0; // Оценнка последнего просмотренного фильма
-let askLastFilm = '';//Переменная для вопроса о последнем фильме
-let askFilmScore = 0;//Переменная для вопроса об оценки пследнего фильма
+let numberOfFilms;
 const personalMovieDB = {
     count: numberOfFilms,
     movies: {},
@@ -10,13 +6,21 @@ const personalMovieDB = {
     genres: [],
     privat: false
 };
-function whatMovie () {
-    return prompt('Какой последнйи фильм ты посмотрел?', '');
-    }
-function whatScore () {
-    return prompt('Какую оценку ты дашь фильму?', '');
-    }
-    personalMovieDB.movies[whatMovie()] =  whatScore();
-    console.log(personalMovieDB);
 
+function whatMovie() {
+    let askLastFilm = ""; //Переменная для вопроса о последнем фильме
+    while ((askLastFilm || "").length > 50 || askLastFilm === null || askLastFilm.length === 0) {
+        askLastFilm = prompt('Какой последнйи фильм ты посмотрел?', '');
+    }
+
+    let askFilmScore;
+    while (!askFilmScore || askFilmScore < 0 || askFilmScore > 10) {
+        /* askFilmScore = prompt('Какую оценку ты дашь фильму?', ''); */
+        askFilmScore = parseFloat(prompt('Какую оценку ты дашь фильму?', ''));
+    }
     
+    personalMovieDB.movies[askLastFilm] = askFilmScore;
+}
+whatMovie();
+
+console.log(personalMovieDB);

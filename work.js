@@ -75,11 +75,35 @@ if(browser == 'Edge') {
 /************************************************* */
 /* Напишите функцию pow(x,n), которая возвращает x в степени n.
 Иначе говоря, умножает x на себя n раз и возвращает результат. */
-let result;
+/* let result;
 function pow (x, n){
     return result (x ** n);
 }
 const c = prompt("");
 const v = prompt("");
 pow(c,v);
-alert(result);
+alert(result); */
+
+/************************************************* */
+//Перепишите с использованием функции-стрелки
+/* function ask(question, yes, no) {
+  if (confirm(question)) yes()
+  else no();
+}
+
+ask(
+  "Вы согласны?",
+  function() { alert("Вы согласились."); },
+  function() { alert("Вы отменили выполнение."); }
+); */
+
+let ask = (question, yes, no) => {
+  if (confirm(question)) yes()
+  else no();
+}
+
+ask(
+  "Вы согласны?",
+  () => alert("Вы согласились."),
+  () => alert("Вы отменили выполнение.")
+);

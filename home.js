@@ -6,18 +6,18 @@ const personalMovieDB = {
     genres: [],
     privat: false
 };
-for (let i = 0; i < 2; i++){
-   // let a = prompt('Один из последних просмотренных фильмов', '');
+for (let i = 0; i < 2; i++) {
+    // let a = prompt('Один из последних просмотренных фильмов', '');
     let b = prompt('На сколько оцените его?', '');
-    var nymberSymbol = a.length;     
-    if (nymberSymbol !== "" || nymberSymbol > 50 || nymberSymbol == null || numberOfFilms == undefined){
-       (i >= 1) ? i-- : i = i;
-          personalMovieDB.movies[a] = b;
+    var nymberSymbol = a.length;
+    if (nymberSymbol !== "" || nymberSymbol > 50 || nymberSymbol == null || numberOfFilms == undefined) {
+        (i >= 1) ? i-- : i = i;
+        personalMovieDB.movies[a] = b;
     }
-        } 
+}
 console.log(personalMovieDB);
 
-function lastFIlm (a){
+function lastFIlm(a) {
     String a = prompt('Один из последних просмотренных фильмов', '');
 }
 

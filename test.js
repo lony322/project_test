@@ -10,13 +10,24 @@ const personalMovieDB = {
     genres: [],
     privat: false
 };
+
+
 function whatMovie () {
-    return prompt('Какой последнйи фильм ты посмотрел?', '');
+    askLastFilm = prompt('Какой последнйи фильм ты посмотрел?', '');
+    askLastFilm = askLastFilm.length;
+    console.log(askLastFilm);
+    switch(askLastFilm){
+        case askLastFilm < 50:
+            alert("Много!");
+            break;
+            
     }
+        }
+
+
 function whatScore () {
     return prompt('Какую оценку ты дашь фильму?', '');
     }
     personalMovieDB.movies[whatMovie()] =  whatScore();
     console.log(personalMovieDB);
 
-    

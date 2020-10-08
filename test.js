@@ -1,4 +1,4 @@
-/* let numberOfFilms;
+let numberOfFilms;
 const personalMovieDB = {
     count: numberOfFilms,
     movies: {},
@@ -15,20 +15,13 @@ function whatMovie() {
 
     let askFilmScore;
     while (!askFilmScore || askFilmScore < 0 || askFilmScore > 10) {
-        askFilmScore = parseFloat(prompt('Какую оценку ты дашь фильму?', ''));
-        console.log(askFilmScore);
-    }
+           askFilmScore = parseFloat(prompt('Какую оценку ты дашь фильму?', ''));
+           console.log(askFilmScore);
+        }
+
+    
     personalMovieDB.movies[askLastFilm] = askFilmScore;
 }
-function detecPersonalLevel() {
-    numberOfFilms = prompt("Cколько фильмов ты посмотрел за последнее время?");
-    numberOfFilms = (numberOfFilms < 10) ? alert("Просмотренно довольно мало фильмов") :
-        (numberOfFilms > 30) ? alert("Вы киноман") :
-            (numberOfFilms > 10 && numberOfFilms < 30) ? alert("Вы классический зритель") :
-                alert("Произошла ошибка");
-}
+whatMovie();
 
-detecPersonalLevel();
-whatMovie();
-whatMovie();
-console.log(personalMovieDB); */
+console.log(personalMovieDB);

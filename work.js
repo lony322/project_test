@@ -64,8 +64,8 @@ if(browser == 'Edge') {
       } */
 
 
-    //**********************************************************************
-   //Напишите функцию min(a,b), которая возвращает меньшее из чисел a и b.   
+//**********************************************************************
+//Напишите функцию min(a,b), которая возвращает меньшее из чисел a и b.   
 /* function minNumber(a, b){
     (a > b && a !== b) ? alert(`${a} больше ${b}`) : alert(`${b} больше ${a}`);
     }
@@ -75,11 +75,84 @@ if(browser == 'Edge') {
 /************************************************* */
 /* Напишите функцию pow(x,n), которая возвращает x в степени n.
 Иначе говоря, умножает x на себя n раз и возвращает результат. */
-let result;
+/* let result;
 function pow (x, n){
     return result (x ** n);
 }
 const c = prompt("");
 const v = prompt("");
 pow(c,v);
-alert(result);
+alert(result); */
+
+/************************************************* */
+//Перепишите с использованием функции-стрелки
+/* function ask(question, yes, no) {
+  if (confirm(question)) yes()
+  else no();
+}
+
+ask(
+  "Вы согласны?",
+  function() { alert("Вы согласились."); },
+  function() { alert("Вы отменили выполнение."); }
+); */
+
+/* let ask = (question, yes, no) => {
+  if (confirm(question)) yes()
+  else no();
+}
+
+ask(
+  "Вы согласны?",
+  () => alert("Вы согласились."),
+  () => alert("Вы отменили выполнение.")
+);
+ */
+/* let user = {};
+user["name"] = "john";
+user["surname"] = "Smith";
+console.log(user.surname); */
+
+//Напишите функцию isEmpty(obj), которая возвращает true, если у объекта нет свойств, иначе false.
+/* let test = {};
+function isEmpty(obj) {
+  for (let key in test) {
+    return true;
+  }
+  return false;
+}
+console.log(isEmpty(test)); */
+
+/* Напишите код для суммирования всех зарплат и сохраните результат в переменной sum.
+Должно получиться 390.
+Если объект salaries пуст, то результат должен быть 0. */
+/* let salaries = {
+  John: 100,
+  Ann: 160,
+  Pete: 130
+};
+let sum = 0;
+for (let key in salaries){
+  sum = sum + salaries[key];
+  console.log(sum);
+    }
+ */
+
+//*******************************************************
+/* Создайте функцию multiplyNumeric(obj),
+которая умножает все числовые свойства объекта obj на 2. */
+let menu = {
+  width: 200,
+  height: 300,
+  title: "My menu",
+};
+let key = 0;
+function multiplyNumeric(obj) {
+  for (key in menu) {
+    if (typeof menu[key] === "number"){
+  menu[key] = menu[key] * 2;
+    }
+  }
+}
+multiplyNumeric(menu);
+console.log(menu);

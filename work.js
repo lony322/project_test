@@ -156,3 +156,4 @@ function multiplyNumeric(obj) {
 }
 multiplyNumeric(menu);
 console.log(menu);
+df
